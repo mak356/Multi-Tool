@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Tool Notepad App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Notepad App</h1>
+      <div class="controls">
+        <input type="text" id="searchInput" placeholder="Search notes...">
+        <button id="toggleThemeBtn">🌙</button>
+        <button id="newNoteBtn">+ New</button>
+      </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+      <ul>
+        <li><a href="#" onclick="showTool('notepad')">Notepad</a></li>
+        <li><a href="#" onclick="showTool('calculator')">Calculator</a></li>
+        <li><a href="#" onclick="showTool('unitConverter')">Unit Converter</a></li>
+        <li><a href="#" onclick="showTool('timer')">Timer</a></li>
+      </ul>
+    </nav>
+
+    <main id="mainContent">
+      <!-- Notepad Section -->
+      <section class="note-editor" id="notepad">
+        <input type="text" id="noteTitle" placeholder="Title...">
+        <textarea id="noteContent" placeholder="Write your note..."></textarea>
+        <input type="text" id="noteTags" placeholder="Tags (comma separated)">
+        <button id="saveNoteBtn">Save</button>
+        <div id="notesList"></div>
+      </section>
+
+      <!-- Calculator Section -->
+      <section class="calculator" id="calculator" style="display: none;">
+        <h2>Calculator</h2>
+        <input type="text" id="calcInput" placeholder="0">
+        <div class="calc-buttons">
+          <button onclick="addToCalc('7')">7</button>
+          <button onclick="addToCalc('8')">8</button>
+          <button onclick="addToCalc('9')">9</button>
+          <button onclick="addToCalc('/')">/</button>
+          <button onclick="addToCalc('4')">4</button>
+          <button onclick="addToCalc('5')">5</button>
+          <button onclick="addToCalc('6')">6</button>
+          <button onclick="addToCalc('*')">*</button>
+          <button onclick="addToCalc('1')">1</button>
+          <button onclick="addToCalc('2')">2</button>
+          <button onclick="addToCalc('3')">3</button>
+          <button onclick="addToCalc('-')">-</button>
+          <button onclick="addToCalc('0')">0</button>
+          <button onclick="addToCalc('.')">.</button>
+          <button onclick="calculateResult()">=</button>
+          <button onclick="addToCalc('+')">+</button>
+        </div>
+      </section>
+
+      <!-- Unit Converter Section -->
+      <section class="unit-converter" id="unitConverter" style="display: none;">
+        <h2>Unit Converter</h2>
+        <label for="unitFrom">From:</label>
+        <input type="number" id="unitFrom">
+        <select id="unitFromType">
+          <option value="meters">Meters</option>
+          <option value="kilometers">Kilometers</option>
+          <option value="miles">Miles</option>
+        </select>
+
+        <label for="unitTo">To:</label>
+        <input type="number" id="unitTo" disabled>
+        <select id="unitToType">
+          <option value="meters">Meters</option>
+          <option value="kilometers">Kilometers</option>
+          <option value="miles">Miles</option>
+        </select>
+
+        <button onclick="convertUnits()">Convert</button>
+      </section>
+
+      <!-- Timer Section -->
+      <section class="timer" id="timer" style="display: none;">
+        <h2>Timer</h2>
+        <input type="number" id="timerInput" placeholder="Enter time in seconds">
+        <button onclick="startTimer()">Start Timer</button>
+        <div id="timerDisplay">00:00</div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

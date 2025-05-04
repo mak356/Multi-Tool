@@ -1,0 +1,211 @@
+/* General Styles */
+:root {
+    --bg: #f4f4f9;
+    --text: #333;
+    --card: #fff;
+    --primary: #4a4ef5;
+    --accent: #2cbb7f;
+    --danger: #ff5f5f;
+  }
+  
+  .dark-mode {
+    --bg: #1e1e2f;
+    --text: #f0f0f0;
+    --card: #2b2b3d;
+    --primary: #6b6ff5;
+    --accent: #3ddb9c;
+    --danger: #ff7878;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .app {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  .controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  input, textarea {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    background: var(--card);
+    color: var(--text);
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    width: 200px;
+    float: left;
+    margin-right: 20px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin: 10px 0;
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    border-radius: 6px;
+    transition: background 0.3s;
+  }
+  
+  .sidebar a:hover {
+    background-color: var(--primary);
+    color: white;
+  }
+  
+  /* Main Content Styles */
+  main {
+    float: left;
+    width: calc(100% - 240px);
+  }
+  
+  .note-editor, .calculator, .unit-converter, .timer {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: background 0.3s;
+  }
+  
+  .note-editor input,
+  .note-editor textarea {
+    margin-bottom: 10px;
+  }
+  
+  .calculator {
+    text-align: center;
+  }
+  
+  .calc-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  .calc-buttons button {
+    padding: 15px;
+    font-size: 18px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .calc-buttons button:hover {
+    background: var(--accent);
+  }
+  
+  .unit-converter input,
+  .unit-converter select {
+    margin-bottom: 10px;
+  }
+  
+  .timer {
+    text-align: center;
+  }
+  
+  #timerDisplay {
+    font-size: 2em;
+    margin-top: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      float: none;
+      margin-bottom: 20px;
+    }
+  
+    main {
+      width: 100%;
+      float: none;
+    }
+  }
+  
+  /* Dark Mode Styles */
+  .dark-mode .sidebar a {
+    color: white;
+  }
+  
+  .dark-mode .sidebar a:hover {
+    background-color: var(--primary);
+  }
+  
+  .dark-mode .note-editor,
+  .dark-mode .calculator,
+  .dark-mode .unit-converter,
+  .dark-mode .timer {
+    background: var(--card);
+  }
+  
+  .dark-mode .calc-buttons button {
+    background: var(--primary);
+  }
+  
+  .dark-mode button {
+    background: var(--primary);
+  }
+  
+  .dark-mode input,
+  .dark-mode textarea {
+    background: var(--card);
+    color: var(--text);
+  }
